@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../../context/authContext'
+import { useAuth } from '../../Context/authContext'
 import Hero from '../../components/Hero'
 
 const Home = () => {

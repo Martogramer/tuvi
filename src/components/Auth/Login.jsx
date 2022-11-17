@@ -14,11 +14,11 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 import { FcGoogle } from 'react-icons/fc'
-import { auth, provider } from '../firebase-config';
+import { auth, provider } from '../../firebase-config';
 import { signInWithPopup } from 'firebase/auth'
-import { useAuth } from '../context/authContext'
+import { useAuth } from '../../Context/authContext'
 import { useNavigate } from 'react-router-dom'
-import { Alert } from "./Alert";
+import { Alert } from "../Alert";
 
 export default function SimpleCard() {
     const signInWithGoogle = () => {
