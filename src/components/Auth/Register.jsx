@@ -5,7 +5,6 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Checkbox,
     Stack,
     Link,
     Button,
@@ -13,11 +12,11 @@ import {
     Text,
     useColorModeValue,
 } from '@chakra-ui/react';
-import { auth, provider } from '../firebase-config';
+import { auth, provider } from '../../firebase-config';
 import { signInWithPopup } from 'firebase/auth'
-import { useAuth } from '../context/authContext'
+import { useAuth } from '../../Context/authContext'
 import { useNavigate } from 'react-router-dom'
-import { Alert } from "./Alert";
+import { Alert } from "../Alert";
 import { FcGoogle } from 'react-icons/fc'
 
 
@@ -26,7 +25,7 @@ export default function SimpleCard() {
         signInWithPopup(auth, provider).then(() => {
         })
     }
-    const [user, setUser] = useState({
+    const [user, setUser] = useState({  
         email: "",
         password: "",
     })
@@ -55,7 +54,6 @@ export default function SimpleCard() {
                 <Stack align={'center'}>
                     <Heading fontSize={'4xl'}>Registrarse</Heading>
                     <Text fontSize={'lg'} color={'gray.600'}>
-                    Conseguí trabajo creando un <Link color={'blue.400'}>perfil</Link> con nosotros ✌️
                     </Text>
                 </Stack>
 

@@ -2,9 +2,7 @@ import React from 'react';
 import {
     Box,
     Flex,
-    Avatar,
     HStack,
-    Link,
     IconButton,
     Button,
     Menu,
@@ -12,17 +10,15 @@ import {
     MenuList,
     MenuItem,
     MenuDivider,
+    Link,
     useDisclosure,
-    useColorModeValue,
-    Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { useAuth } from "../context/authContext"
+import { ColorModeSwitcher } from '../Theme/ColorModeSwitcher';
+import { useAuth } from "../../Context/authContext"
 
-const Links = ['Dashboard', 'Projects', 'Team'];
 
-const NavLink = ({ children }) => (
+/* const NavLink = ({ children }) => (
     <Link
         px={2}
         py={1}
@@ -34,11 +30,11 @@ const NavLink = ({ children }) => (
         href={'#'}>
         {children}
     </Link>
-);
+); */
 
 export default function Simple() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const { user, logout } = useAuth();
+    const { logout } = useAuth();
 
     const handleLogout = async () => {
         try {
@@ -82,7 +78,9 @@ export default function Simple() {
                                 />
                             </MenuButton>
                             <MenuList>
+                                <Link to={'/forulario'}>
                                 <MenuItem>Actas</MenuItem>
+                                </Link>
                                 <MenuItem>Cargar acta</MenuItem>
                                 <MenuDivider />
                                 <MenuItem onClick={handleLogout} >Cerrar sesión</MenuItem>

@@ -14,11 +14,11 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 import { FcGoogle } from 'react-icons/fc'
-import { auth, provider } from '../firebase-config';
+import { auth, provider } from '../../firebase-config';
 import { signInWithPopup } from 'firebase/auth'
-import { useAuth } from '../context/authContext'
+import { useAuth } from '../../Context/authContext'
 import { useNavigate } from 'react-router-dom'
-import { Alert } from "./Alert";
+import { Alert } from "../Alert";
 
 export default function SimpleCard() {
     const signInWithGoogle = () => {
@@ -67,7 +67,6 @@ export default function SimpleCard() {
                 <Stack align={'center'}>
                     <Heading fontSize={'4xl'}>Loguearse</Heading>
                     <Text fontSize={'lg'} color={'gray.600'}>
-                        Conseguí trabajo creando un <Link color={'blue.400'}>perfil</Link> con nosotros ✌️
                     </Text>
                 </Stack>
                 {error && <Alert message={error} />}

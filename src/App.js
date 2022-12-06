@@ -6,13 +6,13 @@ import {
   Grid,
   theme,
 } from '@chakra-ui/react';
-import Login from './components/Login'
-import Register from './components/Register'
-import Archivo from './pages/Archivo/Archivo'
-import Formulario from './pages/Formulario/Formulario'
-import Navbar from './components/Navbar'
-import { AuthProvider } from './context/authContext';
-import { ProtectedRoute } from "./components/ProtectedRoute"
+import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
+import Archivo from './components/Archivo/Archivo'
+import Formulario from './components/Form/Formulario'
+import Navbar from './components/Nav/Navbar'
+import { AuthProvider } from './Context/authContext';
+import { ProtectedRoute } from "./routes/ProtectedRoute"
 import Home from './pages/Home/Home'
 
 function App() {
