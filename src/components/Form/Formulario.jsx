@@ -2,8 +2,22 @@ import React, { useRef, useState } from 'react'
 import { auth, db } from '../../firebase-config'
 import { collection, addDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
-import { Button, Grid, Input } from '@chakra-ui/react'
-import { useToast } from '@chakra-ui/react'
+import {
+    Flex,
+    Box,
+    FormControl,
+    FormLabel,
+    Input,
+    Checkbox,
+    Stack,
+    Link,
+    Button,
+    Heading,
+    Text,
+    useToast,
+    useColorModeValue,
+} from '@chakra-ui/react';
+import { } from '@chakra-ui/react'
 
 
 
@@ -42,10 +56,10 @@ const FormUserPostulante = () => {
             console.log('the sixty question', AddressRef.current.value)
 
             toast({
-                title: 'Account created.',
-                description: "We've created your account for you.",
+                title: 'Acta creada.',
+                description: "Tu acta se guardó en la base de datos",
                 status: 'success',
-                duration: 9000,
+                duration: 6000,
                 isClosable: true
             })
         } catch (error) {
@@ -55,45 +69,84 @@ const FormUserPostulante = () => {
     }
 
     return (
-        <div>
-            <Button w={100} fontSize='3xl' colorScheme='gray' variant='ghost' spacing='6' onClick={() => addingFirstStep()} >
-                Save
-            </Button>
-            <Grid templateColumns='repeat(3, 1fr)' gap={5} >
-                <Input type="text" isRequired={true} placeholder=' Fist Name ' ref={FirstNameRef} color='teal' m={2} _placeholder={{
-                    color: 'red'
-                }}
-                    textAlign={['left', 'center']}
-                    width={600}
-                />
-                <Input type="text" isRequired placeholder=' Second Name ' ref={SecondNameRef} color='teal' m={2} _placeholder={{
-                    color: 'red'
-                }}
-                    textAlign={['left', 'center']}
-                    width={600}
-                />
-                <Input type="text" isRequired={true} placeholder=' Last Name ' ref={LastNameRef} color='teal' m={2} _placeholder={{
-                    color: 'red'
-                }}
-                    textAlign={['left', 'center']}
-                    width={600} />
-                <Input type="text" isRequired={true} placeholder=' How old are you? ' ref={OldRef} color='teal' m={2} _placeholder={{
-                    color: 'red'
-                }}
-                    textAlign={['left', 'center']}
-                    width={600} />
-                <Input type="text" isRequired={true} placeholder=' Nationality ' ref={CountryRef} color='teal' m={2} _placeholder={{
-                    color: 'red'
-                }}
-                    textAlign={['left', 'center']}
-                    width={600} />
-                <Input type="text" isRequired={true} placeholder=' What is your address? ' ref={AddressRef} color='teal' m={2} _placeholder={{
-                    color: 'red'
-                }}
-                    textAlign={['left', 'center']}
-                    width={600} />
-            </Grid>
-        </div>
+        <Flex
+            minH={'100vh'}
+            align={'center'}
+            justify={'center'}
+            bg={useColorModeValue('gray.50', 'gray.800')}>
+            <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+                <Box
+                    rounded={'lg'}
+                    bg={useColorModeValue('white', 'gray.700')}
+                    boxShadow={'lg'}
+                    p={8}>
+                    <Input type="number" 
+                        isRequired={true} 
+                        placeholder=' Número de acta ' 
+                        ref={FirstNameRef} 
+                        color='teal' m={2} 
+                        textAlign={['left', 'center']}
+                    />
+                    <Input type="text" 
+                        isRequired 
+                        placeholder=' Lugar de infracción ' 
+                        ref={SecondNameRef} 
+                        color='teal' m={2}
+                        textAlign={['left', 'center']}
+                    />
+                    <Input type="text" 
+                        isRequired={true} 
+                        placeholder=' Fecha ' 
+                        ref={LastNameRef} 
+                        color='teal' m={2} 
+                        textAlign={['left', 'center']}
+                    />
+                    <Input type="text" 
+                        isRequired={true} 
+                        placeholder=' Hora de infracción ' 
+                        ref={OldRef} 
+                        color='teal' m={2}
+                        textAlign={['left', 'center']}
+                    />
+                    <Input type="text" 
+                        isRequired={true} 
+                        placeholder=' Dominio' 
+                        ref={CountryRef} 
+                        color='teal' m={2}
+                        textAlign={['left', 'center']}
+                    />
+                    <Input type="text" 
+                        isRequired={true}
+                        placeholder=' Tipo de vehículo ' 
+                        ref={AddressRef} 
+                        color='teal' m={2} 
+                        textAlign={['left', 'center']}
+                    />
+                    <Input type="text" 
+                        isRequired={true}
+                        placeholder=' Titular del vehículo ' 
+                        ref={AddressRef} 
+                        color='teal' m={2} 
+                        textAlign={['left', 'center']}
+                    />
+                    <Button
+                            rounded={'full'}
+                            size={'lg'}
+                            fontWeight={'normal'}
+                            mt={6}
+                            w={60}
+                            colorScheme={'red'}
+                            bg={'red.400'}
+                            _hover={{ bg: 'red.500' }}
+                            onClick={() => addingFirstStep()}>
+                            Cargar
+                        </Button>
+                    
+
+
+                </Box>
+            </Stack>
+        </Flex>
     )
 }
 

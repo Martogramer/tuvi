@@ -25,7 +25,7 @@ export default function SimpleCard() {
         signInWithPopup(auth, provider).then(() => {
         })
     }
-    const [user, setUser] = useState({
+    const [user, setUser] = useState({  
         email: "",
         password: "",
     })
@@ -54,7 +54,6 @@ export default function SimpleCard() {
                 <Stack align={'center'}>
                     <Heading fontSize={'4xl'}>Registrarse</Heading>
                     <Text fontSize={'lg'} color={'gray.600'}>
-                    Conseguí trabajo creando un <Link color={'blue.400'}>perfil</Link> con nosotros ✌️
                     </Text>
                 </Stack>
 

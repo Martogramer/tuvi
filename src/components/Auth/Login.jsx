@@ -67,7 +67,6 @@ export default function SimpleCard() {
                 <Stack align={'center'}>
                     <Heading fontSize={'4xl'}>Loguearse</Heading>
                     <Text fontSize={'lg'} color={'gray.600'}>
-                        Conseguí trabajo creando un <Link color={'blue.400'}>perfil</Link> con nosotros ✌️
                     </Text>
                 </Stack>
                 {error && <Alert message={error} />}

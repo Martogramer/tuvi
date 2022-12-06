@@ -10,6 +10,7 @@ import {
     MenuList,
     MenuItem,
     MenuDivider,
+    Link,
     useDisclosure,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
@@ -77,7 +78,9 @@ export default function Simple() {
                                 />
                             </MenuButton>
                             <MenuList>
+                                <Link to={'/forulario'}>
                                 <MenuItem>Actas</MenuItem>
+                                </Link>
                                 <MenuItem>Cargar acta</MenuItem>
                                 <MenuDivider />
                                 <MenuItem onClick={handleLogout} >Cerrar sesión</MenuItem>
