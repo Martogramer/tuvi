@@ -70,14 +70,14 @@ export default function UserProfileEdit() {
 
 	return (
 		<Flex flexDirection='column' pt={{ base: '120px', md: '75px' }}>
-			<SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
+			{/* <SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
 				<Card>
 					<CardBody borderWidth='1px'>
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat me='auto'>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
 									Total Sales
-								</StatLabel>
+				w				</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff' fontWeight='bold'>
 										$173,000
@@ -97,20 +97,13 @@ export default function UserProfileEdit() {
 						</Flex>
 					</CardBody>
 				</Card>
-			</SimpleGrid>
+			</SimpleGrid> */}
 
-			<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', '2xl': '2fr 1.2fr 1.5fr' }} my='26px' gap='18px'>
+			{/* <Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', '2xl': '2fr 1.2fr 1.5fr' }} my='26px' gap='18px'>
 									<Card borderWidth='1px'>
 										<CardHeader mb='32px'>
 
-
-
-
 											<EditInput />
-
-
-
-
 
 										</CardHeader>
 									</Card>
@@ -177,11 +170,10 @@ export default function UserProfileEdit() {
 						</Flex>
 					</Flex>
 				</Card>
-			</Grid>
+			</Grid> */}
 			<Grid
 				templateColumns={{ sm: '1fr', lg: '1.7fr 1.3fr' }}
 				maxW={{ sm: '100%', md: '100%' }}
-				gap='24px'
 				mb='24px'>
 				{/* Sales Overview */}
 				
@@ -201,7 +193,7 @@ export default function UserProfileEdit() {
 									barChartData={barChartDataDashboard}
 								/> */}
 							</Box>
-							<Flex borderWidth='1px' direction='column' mt='24px' mb='36px' alignSelf='flex-start'>
+							{/* <Flex borderWidth='1px' direction='column' mt='24px' mb='36px' alignSelf='flex-start'>
 								<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
 									Active Users
 								</Text>
@@ -278,13 +270,12 @@ export default function UserProfileEdit() {
 									</Text>
 									<Progress colorScheme='brand' bg='#2D2E5F' borderRadius='30px' h='5px' value={50} />
 								</Flex>
-							</SimpleGrid>
+							</SimpleGrid> */}
 						</Flex>
 					</CardBody>
 				</Card>
 			</Grid>
-			<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', lg: '2fr 1fr' }} gap='24px'>
-				{/* Projects */}
+			{/* <Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', lg: '2fr 1fr' }} gap='24px'>
 				<Card p='16px' overflowX={{ sm: 'scroll', xl: 'hidden' }}>
 					<CardHeader borderWidth='1px' p='12px 0px 28px 0px'>
 						<Flex direction='column'>
@@ -326,7 +317,7 @@ export default function UserProfileEdit() {
 						</Tbody>
 					</Table>
 				</Card>
-			</Grid>
+			</Grid> */}
 		</Flex>
 	);
 }
