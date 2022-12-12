@@ -78,10 +78,12 @@ export default function Simple() {
                                 />
                             </MenuButton>
                             <MenuList>
-                                <Link to={'/forulario'}>
+                                <Link href={'/archivo'}>
                                 <MenuItem>Actas</MenuItem>
                                 </Link>
+                                <Link href={'/formulario'}>
                                 <MenuItem>Cargar acta</MenuItem>
+                                </Link>
                                 <MenuDivider />
                                 <MenuItem onClick={handleLogout} >Cerrar sesión</MenuItem>
                             </MenuList>
