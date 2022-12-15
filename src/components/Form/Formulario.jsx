@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { auth, db } from '../../firebase-config'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, setDoc, doc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
 import {
     Flex,
@@ -36,18 +36,19 @@ const FormUserPostulante = () => {
     const CountryRef = useRef()
     const AddressRef = useRef()
 
-    async function addingFirstStep(e) {
+    async function addingFirstStep() {
         //e.preventDefault()
         console.log('Start function to push doc in firebase')
         try {
-            const docRef = await addDoc(collection(db, 'FomrUserFirstStep'), {
-                FirstName: FirstNameRef.current.value,
+            const firstName = FirstNameRef.current.value
+            await setDoc( doc(collection(db, 'FomrUserFirstStep'), firstName), {
+                FirstName: firstName,
                 SecondName: SecondNameRef.current.value,
                 LastName: LastNameRef.current.value,
                 Old: OldRef.current.value,
                 Country: CountryRef.current.value,
                 Address: AddressRef.current.value
-            })
+            })  
             console.log('the first question', FirstNameRef.current.value)
             console.log('the second question', SecondNameRef.current.value)
             console.log('the third question', LastNameRef.current.value)

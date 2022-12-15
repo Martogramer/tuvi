@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { auth, db } from '../../firebase-config'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, getDoc, doc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
 import {
     Flex,
@@ -17,7 +17,7 @@ import {
     useToast,
     useColorModeValue,
 } from '@chakra-ui/react';
-import { } from '@chakra-ui/react'
+import { } from '@chakra-ui/react'  
 
 
 
@@ -36,7 +36,7 @@ const FormUserPostulante = () => {
     const CountryRef = useRef()
     const AddressRef = useRef()
 
-    async function addingFirstStep(e) {
+    async function getDocUser(e) {
         //e.preventDefault()
         console.log('Start function to push doc in firebase')
         try {
