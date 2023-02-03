@@ -13,7 +13,7 @@ import {
     IconProps,
     useColorModeValue,
 } from '@chakra-ui/react';
-import {Link, useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../Context/authContext';
 export default function CallToActionWithVideo() {
     const Navigate = useNavigate()
@@ -48,7 +48,7 @@ export default function CallToActionWithVideo() {
                         <br />
                     </Heading>
                     <Link
-                    to="/formulario"
+                        to="/formulario"
                     >
                         <Button
                             rounded={'full'}
@@ -56,21 +56,23 @@ export default function CallToActionWithVideo() {
                             fontWeight={'normal'}
                             px={6}
                             colorScheme={'red'}
-                            bg={'red.400'}
-                            _hover={{ bg: 'red.500' }}>
+                            bg={'gray.300'}
+                            _hover={{ bg: 'gray.500' }}>
                             Cargar
                         </Button>
-                                </Link>
-                       {/*  <Button
+                    </Link>
+                    <Link
+                        to="/archivo"
+                    >
+                     <Button
                             rounded={'full'}
                             size={'lg'}
                             fontWeight={'normal'}
                             px={6}
                             leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
-                            Cómo hacerlo?
-                        </Button> */}
-                    
-                    
+                            Ver actas
+                        </Button>
+                    </Link>
                 </Stack>
             </Stack>
         </Container>
